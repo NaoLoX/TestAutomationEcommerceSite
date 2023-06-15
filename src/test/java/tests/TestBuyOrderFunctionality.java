@@ -45,7 +45,7 @@ public class TestBuyOrderFunctionality {
 
 	// The actual Test
 	@Test
-	public void TestBuyOrderFunctionality() throws InterruptedException {
+	public void TestBuyOrderFunctionalityFunction() throws InterruptedException {
 		
 		ExcelReader reader = new ExcelReader("./data/testdata.xlsx");
 		String username = reader.getCellData("LoginInfo", "username", 2);
