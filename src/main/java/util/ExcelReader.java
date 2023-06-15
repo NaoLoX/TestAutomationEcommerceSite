@@ -7,6 +7,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ExcelReader {
 	// Global Variables
@@ -14,6 +16,7 @@ public class ExcelReader {
 	private FileInputStream fis = null;
 	private XSSFWorkbook workbook = null;
 	private XSSFSheet sheet = null;
+	private static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
 	// Constructor to initialize variables
 	public ExcelReader(String path) {
@@ -24,7 +27,7 @@ public class ExcelReader {
 			sheet = workbook.getSheetAt(0);
 			fis.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.warn(e.getMessage());
 		}
 	}
 
