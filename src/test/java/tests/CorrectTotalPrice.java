@@ -30,14 +30,14 @@ Steps to Automate:
 12. Change the quantity to 2.
 13. Verify that Total price is changing and reflecting correct price.*/
 
-public class CorrectTotalPrice {
+public class TestCorrectTotalPrice {
 	WebDriver driver;
 
 	// Starting browser and navigating to website
 	// 1. Open link http://automationpractice.com/index.php
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
@@ -82,13 +82,11 @@ public class CorrectTotalPrice {
 		// 12. Change the quantity to 2.
 		// 13. Verify that Total price is changing and reflecting correct price.
 		ProdP.testTotalCalculation();
-
-		Thread.sleep(5000);
 	}
 
 	// Closing browser
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 }

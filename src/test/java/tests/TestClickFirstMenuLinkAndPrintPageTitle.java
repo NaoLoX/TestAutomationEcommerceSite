@@ -23,7 +23,7 @@ Steps to Automate:
 8. Get the page title and print it. Verify that value matches with output of point no. 4
 9. Close the browser.*/
 
-public class ClickFirstMenuLinkAndPrintPageTitle {
+public class TestClickFirstMenuLinkAndPrintPageTitle {
 	WebDriver driver;
 
 	/*
@@ -32,7 +32,7 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	//Starting Browser
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	//the actual test
@@ -68,7 +68,7 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	// Closing browser
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 
 }

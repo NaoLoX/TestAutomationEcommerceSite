@@ -24,7 +24,7 @@ Steps to Automate:
 6. Click on Register button.
 7. Validate that user is created.*/
 
-public class UserRegistrationProcess {
+public class TestUserRegistrationProcess {
 	WebDriver driver;
 
 	// 1. Open this url http://automationpractice.com/index.php
@@ -32,7 +32,7 @@ public class UserRegistrationProcess {
 	// Starting browser and navigating to website
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
@@ -92,6 +92,6 @@ public class UserRegistrationProcess {
 	// Closing browser
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 }

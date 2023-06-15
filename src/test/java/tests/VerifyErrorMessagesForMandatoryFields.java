@@ -20,13 +20,13 @@ Steps to Automate:
 4. Leave the mandatory fields (marked with *) blank and click Register button.
 5. Verify that error has been displayed for the mandatory fields.*/
 
-public class VerifyErrorMessagesForMandatoryFields {
+public class TestVerifyErrorMessagesForMandatoryFields {
 
 	WebDriver driver;
 
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
@@ -47,7 +47,7 @@ public class VerifyErrorMessagesForMandatoryFields {
 	// Closing browser
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 
 }

@@ -61,14 +61,5 @@ public class OrderPage {
 		}else {
 			logger.warn("Order not completed");
 		}
-		
 	}
-	
-	/*
-	 * public String Get_OrderReference_Text() { String Sub_Str =
-	 * OrderReference_Text.getText(); String Order_Ref_num = Sub_Str.substring(45,
-	 * 53); return Order_Ref_num; }
-	 */
-	
-
 }

@@ -19,13 +19,13 @@ Steps to Automate:
 5. 'Add to Wishlist' will appear on the bottom of that product, click on it.
 6. Verify that error message is displayed 'You must be logged in to manage your wishlist.'*/
 
-public class WishListWorksAfterLogin {
+public class TestWishListWorksAfterLogin {
 	WebDriver driver;
 
 	//1. Open link http://automationpractice.com/index.php
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
@@ -45,11 +45,11 @@ public class WishListWorksAfterLogin {
 		//6. Verify that error message is displayed
 		ts.verifyWishlistErrorBox();
 
-		Thread.sleep(3000);
+
 	}
 
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 }

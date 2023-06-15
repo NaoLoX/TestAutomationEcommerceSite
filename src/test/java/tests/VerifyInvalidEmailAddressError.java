@@ -18,7 +18,7 @@ Steps to Automate:
 3. Enter invalid email address in the email box and click enter.
 4. Validate that an error message is displaying saying "Invalid email address."*/
 
-public class VerifyInvalidEmailAddressError {
+public class TestVerifyInvalidEmailAddressError {
 
 	WebDriver driver;
 
@@ -26,7 +26,7 @@ public class VerifyInvalidEmailAddressError {
 	// 1. Open link
 	@BeforeMethod
 	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
@@ -47,7 +47,7 @@ public class VerifyInvalidEmailAddressError {
 	// Closing browser
 	@AfterMethod
 	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 
 }
