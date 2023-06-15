@@ -74,15 +74,15 @@ public class BuyOrderFunctionality {
 
 		ProductPage ProdP = PageFactory.initElements(driver, ProductPage.class);
 		// 7. Increase quantity to 2.
-		ProdP.Enter_Quantity("2");
+		ProdP.enterQuantity("2");
 		// 8. Select size 'L'
-		ProdP.Select_Size("L");
+		ProdP.selectSize("L");
 		// 9. Select color.
-		ProdP.Select_Color();
+		ProdP.selectColor();
 		// 10. Click 'Add to Cart' button.
-		ProdP.Click_AddToCart_Button();
+		ProdP.clickAddToCartButton();
 		// 11. Click 'Proceed to checkout' button.
-		ProdP.Click_ProceedToCheckout_Button();
+		ProdP.clickProceedToCheckoutButton();
 
 		// 12. Complete the buy order process till payment.
 		OrderPage OrderP = PageFactory.initElements(driver, OrderPage.class);
