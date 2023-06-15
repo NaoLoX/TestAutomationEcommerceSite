@@ -16,29 +16,29 @@ public class MyAccountPage {
 
 	//Element Library
 	@FindBy(how = How.XPATH, using = "//a[@title='Women']")
-	WebElement Women_Button;
+	WebElement womenButton;
 	@FindBy(how = How.XPATH, using = "//*[@id='block_top_menu']/ul/li[1]/ul/li[1]/ul/li[1]/a")
-	WebElement Tshirts_Button;
+	WebElement tshirtsButton;
 	@FindBy(how = How.XPATH, using = "//*[@id='center_column']/div/div[1]/ul/li[1]/a")
-	WebElement OrderHistoryAndDetails_Button;
+	WebElement orderHistoryAndDetailsButton;
 	@FindBy(how = How.XPATH, using = "//a[@class='account']/span")
-	WebElement NameOnAccount;
+	WebElement nameOnAccount;
 
 	//InteractiveMethods
-	public void Hover_Over_Women_Button() {
+	public void hoverOverWomenButton() {
 		Actions actions = new Actions(driver);
-		actions.moveToElement(Women_Button).perform();
+		actions.moveToElement(womenButton).perform();
 	}
 
-	public void Click_Tshirts_Button() {
-		Tshirts_Button.click();
+	public void clickTshirtsButton() {
+		tshirtsButton.click();
 	}
 
-	public void Click_OrderHistoryAndDetails_Button() {
-		OrderHistoryAndDetails_Button.click();
+	public void clickOrderHistoryAndDetailsButton() {
+		orderHistoryAndDetailsButton.click();
 	}
 	
-	public void Assert_NameOnAccount(String FirstName, String LastName) {
-		String FullName = FirstName + " " + LastName;
+	public String assertNameOnAccount(String firstName, String lastName) {
+		return firstName + " " + lastName;
 	}
 }

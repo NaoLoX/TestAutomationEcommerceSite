@@ -4,56 +4,58 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage extends BasePage{
 
 	WebDriver driver;
-	
+	private final Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 	}
 	
 	//Element Library
-	@FindBy(how = How.XPATH, using = "//input[@id='email']") WebElement Email_Address_Field;
-	@FindBy(how = How.XPATH, using = "//input[@id='passwd']") WebElement Password_Field;
-	@FindBy(how = How.XPATH, using = "//button[@id='SubmitLogin']") WebElement SignIn_Button;
-	@FindBy(how = How.XPATH, using = "//button[@name='SubmitCreate']") WebElement CreateAnAccount_Button;
-	@FindBy(how = How.XPATH, using = "//input[@id='email_create']") WebElement CreatAccountEmail_Field;
-	@FindBy(how = How.XPATH, using = "//*[@id='create_account_error']") WebElement InvalidEmail_Alert;
-	@FindBy(how = How.XPATH, using = "//div[@id='create_account_error']/ol/li") WebElement InvalidEmail_Alert_Text;
+	@FindBy(how = How.XPATH, using = "//input[@id='email']") WebElement emailAddressField;
+	@FindBy(how = How.XPATH, using = "//input[@id='passwd']") WebElement passwordField;
+	@FindBy(how = How.XPATH, using = "//button[@id='SubmitLogin']") WebElement signInButton;
+	@FindBy(how = How.XPATH, using = "//button[@name='SubmitCreate']") WebElement createAnAccountButton;
+	@FindBy(how = How.XPATH, using = "//input[@id='email_create']") WebElement creatAccountEmailField;
+	@FindBy(how = How.XPATH, using = "//*[@id='create_account_error']") WebElement invalidEmailAlert;
+	@FindBy(how = How.XPATH, using = "//div[@id='create_account_error']/ol/li") WebElement invalidEmailAlertText;
 	
 	//InteractiveMethods
-	public void Enter_EMail_Address(String Email) {
-		Email_Address_Field.sendKeys(Email);
+	public void enterEMailAddress(String email) {
+		emailAddressField.sendKeys(email);
 	}
 	
-	public void Enter_Password(String Password) {
-		Password_Field.sendKeys(Password);
+	public void enterPassword(String password) {
+		passwordField.sendKeys(password);
 	}
 	
-	public void Click_Signin_Button() {
-		SignIn_Button.click();
+	public void clickSigningButton() {
+		signInButton.click();
 	}
 	
-	public void Click_CreateAnAccount_Button() {
-		CreateAnAccount_Button.click();
+	public void clickCreateAnAccountButton() {
+		createAnAccountButton.click();
 	}
 	
-	public void Fill_CreatAccountEmail_Field() {
-		CreatAccountEmail_Field.sendKeys(Random_Number_Generator() + "." + Random_Number_Generator() + "user@email.com");
+	public void fillCreatAccountEmailField() {
+		creatAccountEmailField.sendKeys(randomNumberGenerator() + "." + randomNumberGenerator() + "user@email.com");
 	}
 
-	public void Fill_CreatAccount_WithInvalidEmail_Field(String email) {
-		CreatAccountEmail_Field.sendKeys(email);
+	public void fillCreatAccountWithInvalidEmailField(String email) {
+		creatAccountEmailField.sendKeys(email);
 	}
 
-	public void Verify_CreatAccount_WithInvalidEmail_Field() {
+	public void verifyCreatAccountWithInvalidEmailField() {
 		
-		if(InvalidEmail_Alert_Text.isDisplayed() == true) {
-			System.out.println("Success! Alert for invalid email was displayed");
-			System.out.println(InvalidEmail_Alert_Text.getText());
+		if(invalidEmailAlertText.isDisplayed()) {
+			logger.info("Success! Alert for invalid email was displayed");
+			logger.info(invalidEmailAlertText.getText());
 		}else {
-			System.out.println("Failure, alert for invalid email was not displayed ");
+			logger.warn("Failure, alert for invalid email was not displayed ");
 		}
 		
 	}

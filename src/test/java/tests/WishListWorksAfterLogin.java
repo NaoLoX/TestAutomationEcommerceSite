@@ -33,17 +33,17 @@ public class WishListWorksAfterLogin {
 
 		MainPage MainP = PageFactory.initElements(driver, MainPage.class);
 		// 2. Move your cursor over Women's link.
-		MainP.Hover_Over_Women_Button();
+		MainP.hoverOverWomenButton();
 		// 3. Click on sub menu 'T-shirts'.
-		MainP.Click_Tshirts_Button();
+		MainP.clickTshirtsButton();
 
 		TshirtsPage ts = PageFactory.initElements(driver, TshirtsPage.class);
 		// 4. Mouse hover on the second product displayed.
-		ts.Hover_Over_Product();
+		ts.hoverOverProduct();
 		// 5. 'Add to Wishlist' will appear on the bottom of that product, click on it.
-		ts.Click_wishlistProduct();
+		ts.clickWishlistProduct();
 		//6. Verify that error message is displayed
-		ts.Verify_wishlist_ErrorBox();
+		ts.verifyWishlistErrorBox();
 
 		Thread.sleep(3000);
 	}

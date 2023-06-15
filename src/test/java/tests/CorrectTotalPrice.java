@@ -48,25 +48,25 @@ public class CorrectTotalPrice {
 		String password = reader.getCellData("LoginInfo", "password", 2);
 
 		MainPage MainP = PageFactory.initElements(driver, MainPage.class);
-		MainP.ClickOnSignInButton();
+		MainP.clickOnSignInButton();
 
 		// 2. Login to the website.
 		LoginPage LoginP = PageFactory.initElements(driver, LoginPage.class);
-		LoginP.Enter_EMail_Address(username);
-		LoginP.Enter_Password(password);
-		LoginP.Click_Signin_Button();
+		LoginP.enterEMailAddress(username);
+		LoginP.enterPassword(password);
+		LoginP.clickSigningButton();
 
 		MyAccountPage MyAcc = PageFactory.initElements(driver, MyAccountPage.class);
 		// 3. Move your cursor over Women's link.
-		MyAcc.Hover_Over_Women_Button();
+		MyAcc.hoverOverWomenButton();
 		// 4. Click on sub menu 'T-shirts'.
-		MyAcc.Click_Tshirts_Button();
+		MyAcc.clickTshirtsButton();
 
 		TshirtsPage ts = PageFactory.initElements(driver, TshirtsPage.class);
 		// 5. Mouse hover on the first product displayed.
-		ts.Hover_Over_Product();
+		ts.hoverOverProduct();
 		// 6. 'More' button will be displayed, click on 'More' button.
-		ts.Click_More_Button_Product_One();
+		ts.clickMoreButtonProductOne();
 
 		ProductPage ProdP = PageFactory.initElements(driver, ProductPage.class);
 		// 7. Make sure quantity is set to 1.
